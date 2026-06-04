@@ -1,0 +1,17 @@
+# Discharge Summary Agent — Python dependencies
+# Install: pip install -r requirements.txt
+
+# --- LLM providers ---
+openai>=1.30.0                  # GPT-4o-mini for extraction, planning, section writing
+google-generativeai>=0.7.0      # Gemini Vision OCR for scanned/handwritten pages
+
+# --- PDF extraction ---
+pdfplumber>=0.11.0              # Digital PDF text extraction (primary)
+PyMuPDF>=1.24.0                 # PDF rasterization for Gemini Vision (fitz)
+Pillow>=10.3.0                  # Image handling for rasterized pages
+
+# --- Data validation ---
+pydantic>=2.7.0                 # WorkingMemory, DischargeSummary, all models
+
+# --- Utilities ---
+python-dotenv>=1.0.0            # Load .env file for API keys (optional but recommended)

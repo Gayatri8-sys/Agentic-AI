@@ -1,0 +1,35 @@
+Patient: patient_2
+Error: 'charmap' codec can't encode character '\u0394' in position 9: character maps to <undefined>
+
+Traceback (most recent call last):
+  File "C:\Users\gaytri gorde\OneDrive\Attachments\Desktop\Agentic AI\main.py", line 103, in _run_patient
+    summary, tracer = run_agent(
+                      ~~~~~~~~~^
+        patient_folder=patient_folder,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        patient_id=patient_id,
+        ^^^^^^^^^^^^^^^^^^^^^^
+        output_dir=output_dir,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\gaytri gorde\OneDrive\Attachments\Desktop\Agentic AI\agent.py", line 723, in run_agent
+    tracer.log(
+    ~~~~~~~~~~^
+        step=step,
+        ^^^^^^^^^^
+    ...<5 lines>...
+        next_decision="Load and classify all PDFs, then generate extraction plan",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\gaytri gorde\OneDrive\Attachments\Desktop\Agentic AI\tracer.py", line 69, in log
+    self._write_md(entry)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\gaytri gorde\OneDrive\Attachments\Desktop\Agentic AI\tracer.py", line 103, in _write_md
+    f.write(f"**Memory Δ:** {entry.memory_delta}\n\n")
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u0394' in position 9: character maps to <undefined>
